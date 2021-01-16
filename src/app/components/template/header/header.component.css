@@ -1,40 +1,35 @@
 .header {
+
     position: absolute;
     width: 1440px;
     height: 56px;
     left: 0px;
     top: 0px;
+    display: flex;
 }
 
 .logo {
     
-position: static;
-width: 164px;
-height: 32px;
-left: 0px;
-top: 12px;
+    position: static;
+    padding-left: 10px;
+    width: 164px;
+    height: 32px;
+    top: 12px;
 
-/* Semibold / 20 | 32 */
+    font-family: Font Awesome 5 Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 32px;
 
-font-family: Font Awesome 5 Pro;
-font-style: normal;
-font-weight: normal;
-font-size: 20px;
-line-height: 32px;
-/* identical to box height, or 160% */
+    display: flex;
+    align-items: center;
 
-display: flex;
-align-items: center;
+    color: #0098A6;
 
-/* 🔹Color Solid/Brand2/Default2 */
-
-color: #0098A6;
-
-/* Inside Auto Layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
-margin: 8px 0px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 8px 0px;
 }
 
