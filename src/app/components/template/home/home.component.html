@@ -1,11 +1,37 @@
-<main>
-    <div class="container">
-        <h2 class="mt-4">Three unequal columns</h2>
-        <p>Get three columns <strong>starting at desktops and scaling to large desktops</strong> of various widths. Remember, grid columns should add up to twelve for a single horizontal block. More than that, and columns start stacking no matter the viewport.</p>
+<div class="row mb-3">
+    <div class="col-md-3 themed-grid-col">
+        <!--compoment profile -->
+        <img src="../../../../assets/profile.png" class="img-profile">
+        <p>Juliherms Vasconcelos</p>
+        <p>Recife-PE</p>
         <div class="row mb-3">
-            <div class="col-md-3 themed-grid-col">.col-md-3</div>
-            <div class="col-md-6 themed-grid-col">.col-md-6</div>
-            <div class="col-md-3 themed-grid-col">.col-md-3</div>
+            <div class="col-md-3 themed-grid-col"><span class="count-summary">100</span></div>
+            <div class="col-md-3 themed-grid-col"><span class="count-summary">10</span></div>
+            <div class="col-md-3 themed-grid-col"><span class="count-summary">20</span></div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3 themed-grid-col"><span class="text-label">Resenhas</span></div>
+            <div class="col-md-3 themed-grid-col"><span class="text-label">Amigos</span></div>
+            <div class="col-md-3 themed-grid-col"><span class="text-label">Livros</span></div>
+        </div>
+        <button type="button" class="btn btn-primary">Adicionar Livro</button>
+        <!-- fim component profile-->    
+    </div>
+    <div class="col-md-6 themed-grid-col">
+        <div class="row mb-3">
+            <div class="col-md-5 themed-grid-col"><span class="text-label">Lendo Atualmente</span></div>
+            <div class="col-md-3 themed-grid-col"><span class="text-label">Lidos</span></div>
+            <div class="col-md-3 themed-grid-col"><span class="text-label">Para Ler </span></div>
         </div>
     </div>
-</main>
+    <div class="col-md-3 themed-grid-col">
+        <div class="summary-panel">
+            <div>
+                <span class="simple-text">Meta para leitura em <b>2020</b></span>
+            </div>
+            <div>
+                <span class="simple-text">Ler <b>20</b> Livros </span>
+            </div>
+        </div>
+    </div>
+</div>
