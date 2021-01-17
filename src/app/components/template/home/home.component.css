@@ -27,3 +27,36 @@
     color: #ffffff;
     padding-top: 40px;
 }
+
+.img-book {
+    width: 152px;
+    height: 202px;
+}
+
+.text-title {
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+
+    display: flex;
+    align-items: center;
+
+    color: #343A3B;
+}
+
+.text-author {
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 150%;
+
+    display: flex;
+    align-items: center;
+
+    color: #0098A6;
+}

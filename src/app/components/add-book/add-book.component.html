@@ -4,10 +4,15 @@ Informe o nome do livro
 
 <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon1"></span>
-    <input type="text" class="form-control" placeholder="Pesquisar Livro" aria-label="Username" aria-describedby="basic-addon1">
-  </div>
+    <input type="text" (keyup)='keyUp($event)' class="form-control" placeholder="Pesquisar Livro" aria-label="Username" aria-describedby="basic-addon1">
+</div>
 
-
-
-
-+ Preencher Manualmente
+<div class="col-md-6 themed-grid-col">
+    <div class="row mb-3" *ngFor="let b of listBooks">
+        <div class="col-md-5 themed-grid-col"><span class="text-label">{{ b.title }}</span></div>
+        <div class="col-md-3 themed-grid-col"><span class="text-label"><img [src]="b.imageLink" ></span></div>
+        <div class="col-md-3 themed-grid-col">
+            <button (click)="select(b)" class="btn btn-outline-info btn-sm mr-2">Selecionar</button>
+        </div>
+    </div>
+</div>

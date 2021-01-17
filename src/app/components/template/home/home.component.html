@@ -2,7 +2,7 @@
     <div class="col-md-3 themed-grid-col">
         <!--compoment profile -->
         <img src="../../../../assets/profile.png" class="img-profile">
-        <p>Juliherms Vasconcelos</p>
+        <p>{{ bookTarget.user.name }}</p>
         <p>Recife-PE</p>
         <div class="row mb-3">
             <div class="col-md-3 themed-grid-col"><span class="count-summary">100</span></div>
@@ -23,6 +23,25 @@
             <div class="col-md-3 themed-grid-col"><span class="text-label">Lidos</span></div>
             <div class="col-md-3 themed-grid-col"><span class="text-label">Para Ler </span></div>
         </div>
+        <div class="row mb-3" *ngFor="let b of listBook">
+            <div class="col-md-5 themed-grid-col">
+                <img class="img-book" src="http://books.google.com/books/content?id=2g0tDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api">
+            </div>
+            <div class="col-md-7 themed-grid-col">
+                <div class="row">
+                    <span class="text-title">{{b.book.title}}</span>
+                </div>
+                <div class="row">
+                    <span class="text-author">{{b.book.author}}</span>
+                </div>
+                <div class="row">
+                    <rating  [(ngModel)]="b.level"   max="5" ></rating>
+                </div>
+                <div class="row">
+                    <progressbar value="22" type="warning" striped="true">22%</progressbar>
+                </div>    
+            </div>
+        </div>
     </div>
     <div class="col-md-3 themed-grid-col">
         <div class="summary-panel">
@@ -30,7 +49,7 @@
                 <span class="simple-text">Meta para leitura em <b>2020</b></span>
             </div>
             <div>
-                <span class="simple-text">Ler <b>20</b> Livros </span>
+                <span class="simple-text">Ler <b>{{ bookTarget.quantity }}</b> Livros </span>
             </div>
         </div>
     </div>
