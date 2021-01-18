@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookService } from './../../books/books.service';
 import { ResponseApi } from './../../core/model/responseAPI';
 import { Book } from '../../books/book';
+import { BookUser } from './../../books/bookUser';
 
 
 @Component({
@@ -38,7 +39,7 @@ export class AddBookComponent {
         book.author = 'definir' ;
 
         if(book.year == undefined){
-          book.year = "2020"
+          book.year = "2020" //definir
         }
 
         if(book.pageCount == undefined){
@@ -57,7 +58,6 @@ export class AddBookComponent {
    * @param event 
    */
   keyUp(event: any) {
-    
     if(event.target.value.toString().length > 3){
       this.listBooks = [];
       this.filterBooks(event.target.value.toString());
@@ -70,7 +70,6 @@ export class AddBookComponent {
    */
 
   keyPress(event: any) {
-
     if(event.target.value.toString().length > 3){
       this.filterBooks(event.target.value.toString());
     }
@@ -81,12 +80,25 @@ export class AddBookComponent {
    * @param book 
    */
   select(book: Book) {
-    console.log(book);
+
     this.listBooks = [];
+    let idCreatedBook = 0;
     this.bookService.create(book).subscribe((responseApi: ResponseApi) => {
-      
+      idCreatedBook = responseApi["id"]; 
+
+      let bookUser = new BookUser();
+      bookUser.description = "";
+      bookUser.idBook = idCreatedBook;
+      bookUser.idUser = 1;
+      bookUser.level = 0;
+      bookUser.status = 1;
+      bookUser.title = "";
+
+      this.bookService.addBook(bookUser).subscribe((responseApi: ResponseApi) => {});
+
     });
-        
+
+    console.log(idCreatedBook);
   }
 
 }
