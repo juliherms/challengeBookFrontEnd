@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from './../../../users/users.service';
 import { ResponseApi } from './../../../core/model/responseAPI';
-
+import { Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,7 +13,8 @@ export class HomeComponent implements OnInit {
   listBook=[];
 
 
-  constructor(private userService: UserService) { }
+
+  constructor(private userService: UserService, private router: Router ) { }
 
   ngOnInit(): void {
     this.getTargetBookUser();
@@ -31,6 +32,10 @@ export class HomeComponent implements OnInit {
     this.userService.getUserBooks(1).subscribe((responseApi:ResponseApi) => {
       this.listBook = responseApi['content'];
     })
+  }
+
+  addBook(){
+    this.router.navigate(['/addBook'])
   }
 
 }

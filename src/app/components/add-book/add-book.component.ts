@@ -14,6 +14,9 @@ export class AddBookComponent {
 
   listBook=[];
   listBooks: Array<Book> = [];
+  message: {};
+  classCss: {};
+
 
   constructor(private bookService: BookService) { }
 
@@ -75,6 +78,24 @@ export class AddBookComponent {
     }
   }
 
+  private buildClasses(type:string):void{
+    this.classCss = {
+      'alert' : true
+    }
+
+    this.classCss['alert-'+type] = true;
+  }
+
+
+  private showMessage(message:{type:string,text:string}):void {
+    this.message = message;
+    this.buildClasses(message.type);
+    setTimeout(() =>{
+      this.message = undefined;
+    },3000);
+  }
+
+
   /**
    * Method responsible to select autocomplete book
    * @param book 
@@ -94,7 +115,13 @@ export class AddBookComponent {
       bookUser.status = 1;
       bookUser.title = "";
 
-      this.bookService.addBook(bookUser).subscribe((responseApi: ResponseApi) => {});
+      this.bookService.addBook(bookUser).subscribe((responseApi: ResponseApi) => {
+        
+        this.showMessage({
+          type: 'success',
+          text:`Livro Adicionado Com Sucesso!`
+        });
+      });
 
     });
 

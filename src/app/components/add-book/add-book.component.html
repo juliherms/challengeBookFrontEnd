@@ -1,5 +1,7 @@
 <p>Adicionar Livro</p>
-
+<div [ngClass]="classCss" role="alert" *ngIf="message">
+    <strong>{{ message.text }}</strong>
+  </div>
 Informe o nome do livro
 
 <div class="input-group mb-3">

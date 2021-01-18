@@ -14,7 +14,7 @@
             <div class="col-md-3 themed-grid-col"><span class="text-label">Amigos</span></div>
             <div class="col-md-3 themed-grid-col"><span class="text-label">Livros</span></div>
         </div>
-        <button type="button" class="btn btn-primary"> Adicionar Livro</button>
+        <button type="button" class="btn btn-primary" (click)="addBook()"> Adicionar Livro</button>
         <!-- fim component profile-->    
     </div>
     <div class="col-md-6 themed-grid-col">
@@ -25,7 +25,7 @@
         </div>
         <div class="row mb-3" *ngFor="let b of listBook">
             <div class="col-md-5 themed-grid-col">
-                <img class="img-book" src="http://books.google.com/books/content?id=2g0tDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api">
+                <img class="img-book" [src]="b.book.imageLink">
             </div>
             <div class="col-md-7 themed-grid-col">
                 <div class="row">
